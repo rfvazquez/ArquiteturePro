@@ -1,0 +1,7 @@
+C:\Users\renan.vazquez\Desktop\Renan\SistemaCamila\CamilaMoraesArquitetura\AutoUpdate\bin\Debug\AutoUpdate.exe.config
+C:\Users\renan.vazquez\Desktop\Renan\SistemaCamila\CamilaMoraesArquitetura\AutoUpdate\bin\Debug\AutoUpdate.exe
+C:\Users\renan.vazquez\Desktop\Renan\SistemaCamila\CamilaMoraesArquitetura\AutoUpdate\bin\Debug\AutoUpdate.pdb
+C:\Users\renan.vazquez\Desktop\Renan\SistemaCamila\CamilaMoraesArquitetura\AutoUpdate\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\renan.vazquez\Desktop\Renan\SistemaCamila\CamilaMoraesArquitetura\AutoUpdate\obj\Debug\AutoUpdate.csprojResolveAssemblyReference.cache
+C:\Users\renan.vazquez\Desktop\Renan\SistemaCamila\CamilaMoraesArquitetura\AutoUpdate\obj\Debug\AutoUpdate.exe
+C:\Users\renan.vazquez\Desktop\Renan\SistemaCamila\CamilaMoraesArquitetura\AutoUpdate\obj\Debug\AutoUpdate.pdb

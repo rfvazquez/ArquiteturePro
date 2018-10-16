@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="de592a6c4790438f8acb6641bdb050df" Name="Diagram1" ZoomLevel="97">
+        <EntityTypeShape EntityType="sql10195674Model.tb_acessos" Width="1.5" PointX="0.5" PointY="12" />
+        <EntityTypeShape EntityType="sql10195674Model.tb_cliente" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="sql10195674Model.tb_despesas" Width="1.5" PointX="5.75" PointY="12.375" />
+        <EntityTypeShape EntityType="sql10195674Model.tb_empresa" Width="1.5" PointX="0.875" PointY="1.5" />
+        <EntityTypeShape EntityType="sql10195674Model.tb_fases" Width="1.5" PointX="11.125" PointY="1.5" />
+        <EntityTypeShape EntityType="sql10195674Model.tb_fasesProjeto" Width="1.5" PointX="11.25" PointY="4.375" />
+        <EntityTypeShape EntityType="sql10195674Model.tb_fluxoCaixa" Width="1.5" PointX="3" PointY="7.75" />
+        <EntityTypeShape EntityType="sql10195674Model.tb_grupoFinanceiro" Width="1.5" PointX="3.125" PointY="12.125" />
+        <EntityTypeShape EntityType="sql10195674Model.tb_ItemPedido" Width="1.5" PointX="8.25" PointY="5.5" />
+        <EntityTypeShape EntityType="sql10195674Model.tb_orcamento" Width="1.5" PointX="6.75" PointY="8.5" />
+        <EntityTypeShape EntityType="sql10195674Model.tb_projeto" Width="1.5" PointX="6" PointY="3.75" />
+        <EntityTypeShape EntityType="sql10195674Model.tb_projetoFluxoCaixa" Width="1.5" PointX="5" PointY="8.25" />
+        <EntityTypeShape EntityType="sql10195674Model.tb_servicos" Width="1.5" PointX="8.125" PointY="11.625" />
+        <EntityTypeShape EntityType="sql10195674Model.tb_telas" Width="1.5" PointX="0.5" PointY="15" />
+        <EntityTypeShape EntityType="sql10195674Model.tb_unidade" Width="1.5" PointX="8.125" PointY="15.25" />
+        <EntityTypeShape EntityType="sql10195674Model.tb_usuario" Width="1.5" PointX="0.75" PointY="8.25" />
+        <AssociationConnector Association="sql10195674Model.FK_tb_acessos_Telas" />
+        <AssociationConnector Association="sql10195674Model.FK_tb_acessos_Usuarios" />
+        <AssociationConnector Association="sql10195674Model.FK_Projeto_Cliente" />
+        <AssociationConnector Association="sql10195674Model.FK_tb_despesas_GrupoFinanceiro" />
+        <AssociationConnector Association="sql10195674Model.FK_tb_fasesProjeto_Fases" />
+        <AssociationConnector Association="sql10195674Model.FK_tb_fasesProjeto_Projeto" />
+        <AssociationConnector Association="sql10195674Model.FK_FluxoCaixa_Usuario" />
+        <AssociationConnector Association="sql10195674Model.FK_tb_fluxoCaixa_GrupoFinanceiro" />
+        <AssociationConnector Association="sql10195674Model.FK_tb_projetoFluxoCaixa_FluxoCaixa" />
+        <AssociationConnector Association="sql10195674Model.FK_tb_ItemPedido_Projeto" />
+        <AssociationConnector Association="sql10195674Model.FK_tb_ItemPedido_servicos" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="sql10195674Model.FK_tb_orcamento_Projeto" />
+        <AssociationConnector Association="sql10195674Model.FK_tb_orcamento_Servico" />
+        <AssociationConnector Association="sql10195674Model.FK_Projeto_Usuario" />
+        <AssociationConnector Association="sql10195674Model.FK_tb_projetoFluxoCaixa_Projeto" />
+        <AssociationConnector Association="sql10195674Model.FK_Servicos_Unidade" />
+        <EntityTypeShape EntityType="sql10195674Model.tb_mensagens" Width="1.5" PointX="3.625" PointY="14.875" />
+        <AssociationConnector Association="sql10195674Model.FK_tb_Mensagens_Usuario" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

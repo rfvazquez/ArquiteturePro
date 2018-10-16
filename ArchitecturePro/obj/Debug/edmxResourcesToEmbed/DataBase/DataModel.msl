@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="sql10195674ModelStoreContainer" CdmEntityContainer="CamilaMoraes">
+    <EntitySetMapping Name="tb_acessos">
+      <EntityTypeMapping TypeName="sql10195674Model.tb_acessos">
+        <MappingFragment StoreEntitySet="tb_acessos">
+          <ScalarProperty Name="ace_TelasId" ColumnName="ace_TelasId" />
+          <ScalarProperty Name="ace_UsrId" ColumnName="ace_UsrId" />
+          <ScalarProperty Name="ace_Id" ColumnName="ace_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_cliente">
+      <EntityTypeMapping TypeName="sql10195674Model.tb_cliente">
+        <MappingFragment StoreEntitySet="tb_cliente">
+          <ScalarProperty Name="cli_BairroObra" ColumnName="cli_BairroObra" />
+          <ScalarProperty Name="cli_ComplementoObra" ColumnName="cli_ComplementoObra" />
+          <ScalarProperty Name="cli_CEPObra" ColumnName="cli_CEPObra" />
+          <ScalarProperty Name="cli_EstadoObra" ColumnName="cli_EstadoObra" />
+          <ScalarProperty Name="cli_CidadeObra" ColumnName="cli_CidadeObra" />
+          <ScalarProperty Name="cli_NumeroObra" ColumnName="cli_NumeroObra" />
+          <ScalarProperty Name="cli_LogradouroObra" ColumnName="cli_LogradouroObra" />
+          <ScalarProperty Name="cli_Bairro" ColumnName="cli_Bairro" />
+          <ScalarProperty Name="cli_Ativo" ColumnName="cli_Ativo" />
+          <ScalarProperty Name="cli_Data" ColumnName="cli_Data" />
+          <ScalarProperty Name="cli_Email" ColumnName="cli_Email" />
+          <ScalarProperty Name="cli_Celular" ColumnName="cli_Celular" />
+          <ScalarProperty Name="cli_Telefone" ColumnName="cli_Telefone" />
+          <ScalarProperty Name="cli_Contato" ColumnName="cli_Contato" />
+          <ScalarProperty Name="cli_Complemento" ColumnName="cli_Complemento" />
+          <ScalarProperty Name="cli_CEP" ColumnName="cli_CEP" />
+          <ScalarProperty Name="cli_Estado" ColumnName="cli_Estado" />
+          <ScalarProperty Name="cli_Cidade" ColumnName="cli_Cidade" />
+          <ScalarProperty Name="cli_Numero" ColumnName="cli_Numero" />
+          <ScalarProperty Name="cli_Logradouro" ColumnName="cli_Logradouro" />
+          <ScalarProperty Name="cli_CpfCnpj" ColumnName="cli_CpfCnpj" />
+          <ScalarProperty Name="cli_Fantasia" ColumnName="cli_Fantasia" />
+          <ScalarProperty Name="cli_Descricao" ColumnName="cli_Descricao" />
+          <ScalarProperty Name="cli_Id" ColumnName="cli_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_despesas">
+      <EntityTypeMapping TypeName="sql10195674Model.tb_despesas">
+        <MappingFragment StoreEntitySet="tb_despesas">
+          <ScalarProperty Name="des_GrfId" ColumnName="des_GrfId" />
+          <ScalarProperty Name="des_Descricao" ColumnName="des_Descricao" />
+          <ScalarProperty Name="des_Id" ColumnName="des_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_empresa">
+      <EntityTypeMapping TypeName="sql10195674Model.tb_empresa">
+        <MappingFragment StoreEntitySet="tb_empresa">
+          <ScalarProperty Name="emp_SenhaEmail" ColumnName="emp_SenhaEmail" />
+          <ScalarProperty Name="emp_TestePagSeguro" ColumnName="emp_TestePagSeguro" />
+          <ScalarProperty Name="emp_TokenPagSeguro" ColumnName="emp_TokenPagSeguro" />
+          <ScalarProperty Name="emp_LoginPagSeguro" ColumnName="emp_LoginPagSeguro" />
+          <ScalarProperty Name="emp_Email" ColumnName="emp_Email" />
+          <ScalarProperty Name="emp_LocalVersao" ColumnName="emp_LocalVersao" />
+          <ScalarProperty Name="emp_VersaoSistema" ColumnName="emp_VersaoSistema" />
+          <ScalarProperty Name="emp_RazaoSocial" ColumnName="emp_RazaoSocial" />
+          <ScalarProperty Name="emp_CEP" ColumnName="emp_CEP" />
+          <ScalarProperty Name="emp_Complemento" ColumnName="emp_Complemento" />
+          <ScalarProperty Name="emp_Estado" ColumnName="emp_Estado" />
+          <ScalarProperty Name="emp_Cidade" ColumnName="emp_Cidade" />
+          <ScalarProperty Name="emp_Bairro" ColumnName="emp_Bairro" />
+          <ScalarProperty Name="emp_Numero" ColumnName="emp_Numero" />
+          <ScalarProperty Name="emp_Logradouro" ColumnName="emp_Logradouro" />
+          <ScalarProperty Name="emp_Telefone" ColumnName="emp_Telefone" />
+          <ScalarProperty Name="emp_CNPJ" ColumnName="emp_CNPJ" />
+          <ScalarProperty Name="emp_Nome" ColumnName="emp_Nome" />
+          <ScalarProperty Name="emp_Id" ColumnName="emp_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_fases">
+      <EntityTypeMapping TypeName="sql10195674Model.tb_fases">
+        <MappingFragment StoreEntitySet="tb_fases">
+          <ScalarProperty Name="fas_Ativo" ColumnName="fas_Ativo" />
+          <ScalarProperty Name="fas_Dias" ColumnName="fas_Dias" />
+          <ScalarProperty Name="fas_Descricao" ColumnName="fas_Descricao" />
+          <ScalarProperty Name="fas_Id" ColumnName="fas_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_fasesProjeto">
+      <EntityTypeMapping TypeName="sql10195674Model.tb_fasesProjeto">
+        <MappingFragment StoreEntitySet="tb_fasesProjeto">
+          <ScalarProperty Name="fap_Finalizada" ColumnName="fap_Finalizada" />
+          <ScalarProperty Name="fap_DataReal" ColumnName="fap_DataReal" />
+          <ScalarProperty Name="fap_DataPrevista" ColumnName="fap_DataPrevista" />
+          <ScalarProperty Name="fap_PrjId" ColumnName="fap_PrjId" />
+          <ScalarProperty Name="fap_FasId" ColumnName="fap_FasId" />
+          <ScalarProperty Name="fap_Id" ColumnName="fap_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_fluxoCaixa">
+      <EntityTypeMapping TypeName="sql10195674Model.tb_fluxoCaixa">
+        <MappingFragment StoreEntitySet="tb_fluxoCaixa">
+          <ScalarProperty Name="flc_URLPagamento" ColumnName="flc_URLPagamento" />
+          <ScalarProperty Name="flc_PagamentoConfirmado" ColumnName="flc_PagamentoConfirmado" />
+          <ScalarProperty Name="flc_PagSeguro" ColumnName="flc_PagSeguro" />
+          <ScalarProperty Name="flc_GrfId" ColumnName="flc_GrfId" />
+          <ScalarProperty Name="flc_DataCaixa" ColumnName="flc_DataCaixa" />
+          <ScalarProperty Name="flc_Valor" ColumnName="flc_Valor" />
+          <ScalarProperty Name="flc_Descricao" ColumnName="flc_Descricao" />
+          <ScalarProperty Name="flc_UsrId" ColumnName="flc_UsrId" />
+          <ScalarProperty Name="flc_Entrada" ColumnName="flc_Entrada" />
+          <ScalarProperty Name="flc_DataCadastro" ColumnName="flc_DataCadastro" />
+          <ScalarProperty Name="flc_Id" ColumnName="flc_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_grupoFinanceiro">
+      <EntityTypeMapping TypeName="sql10195674Model.tb_grupoFinanceiro">
+        <MappingFragment StoreEntitySet="tb_grupoFinanceiro">
+          <ScalarProperty Name="grf_Data" ColumnName="grf_Data" />
+          <ScalarProperty Name="grf_Ativo" ColumnName="grf_Ativo" />
+          <ScalarProperty Name="grf_Descricao" ColumnName="grf_Descricao" />
+          <ScalarProperty Name="grf_Id" ColumnName="grf_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_ItemPedido">
+      <EntityTypeMapping TypeName="sql10195674Model.tb_ItemPedido">
+        <MappingFragment StoreEntitySet="tb_ItemPedido">
+          <ScalarProperty Name="ipo_PrjId" ColumnName="ipo_PrjId" />
+          <ScalarProperty Name="ipo_Valor" ColumnName="ipo_Valor" />
+          <ScalarProperty Name="ipo_Qtde" ColumnName="ipo_Qtde" />
+          <ScalarProperty Name="ipo_SerId" ColumnName="ipo_SerId" />
+          <ScalarProperty Name="ipo_Id" ColumnName="ipo_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_orcamento">
+      <EntityTypeMapping TypeName="sql10195674Model.tb_orcamento">
+        <MappingFragment StoreEntitySet="tb_orcamento">
+          <ScalarProperty Name="orc_Qtde" ColumnName="orc_Qtde" />
+          <ScalarProperty Name="orc_PrjId" ColumnName="orc_PrjId" />
+          <ScalarProperty Name="orc_SerId" ColumnName="orc_SerId" />
+          <ScalarProperty Name="orc_Id" ColumnName="orc_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_projeto">
+      <EntityTypeMapping TypeName="sql10195674Model.tb_projeto">
+        <MappingFragment StoreEntitySet="tb_projeto">
+          <ScalarProperty Name="prj_Arredondamento" ColumnName="prj_Arredondamento" />
+          <ScalarProperty Name="prj_PerGanho" ColumnName="prj_PerGanho" />
+          <ScalarProperty Name="prj_Obs" ColumnName="prj_Obs" />
+          <ScalarProperty Name="prj_UsrId" ColumnName="prj_UsrId" />
+          <ScalarProperty Name="prj_DataFimReal" ColumnName="prj_DataFimReal" />
+          <ScalarProperty Name="prj_DataFimPrevista" ColumnName="prj_DataFimPrevista" />
+          <ScalarProperty Name="prj_DataInicio" ColumnName="prj_DataInicio" />
+          <ScalarProperty Name="prj_CliId" ColumnName="prj_CliId" />
+          <ScalarProperty Name="prj_Id" ColumnName="prj_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_projetoFluxoCaixa">
+      <EntityTypeMapping TypeName="sql10195674Model.tb_projetoFluxoCaixa">
+        <MappingFragment StoreEntitySet="tb_projetoFluxoCaixa">
+          <ScalarProperty Name="pfc_Despesa" ColumnName="pfc_Despesa" />
+          <ScalarProperty Name="pfc_FlcId" ColumnName="pfc_FlcId" />
+          <ScalarProperty Name="pfc_PrjId" ColumnName="pfc_PrjId" />
+          <ScalarProperty Name="pfc_Id" ColumnName="pfc_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_servicos">
+      <EntityTypeMapping TypeName="sql10195674Model.tb_servicos">
+        <MappingFragment StoreEntitySet="tb_servicos">
+          <ScalarProperty Name="ser_UniId" ColumnName="ser_UniId" />
+          <ScalarProperty Name="ser_Data" ColumnName="ser_Data" />
+          <ScalarProperty Name="ser_Ativo" ColumnName="ser_Ativo" />
+          <ScalarProperty Name="ser_Valor" ColumnName="ser_Valor" />
+          <ScalarProperty Name="ser_Descricao" ColumnName="ser_Descricao" />
+          <ScalarProperty Name="ser_Id" ColumnName="ser_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_telas">
+      <EntityTypeMapping TypeName="sql10195674Model.tb_telas">
+        <MappingFragment StoreEntitySet="tb_telas">
+          <ScalarProperty Name="tel_Icone" ColumnName="tel_Icone" />
+          <ScalarProperty Name="tel_frmPrincipal" ColumnName="tel_frmPrincipal" />
+          <ScalarProperty Name="tel_Nome" ColumnName="tel_Nome" />
+          <ScalarProperty Name="tel_Id" ColumnName="tel_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_unidade">
+      <EntityTypeMapping TypeName="sql10195674Model.tb_unidade">
+        <MappingFragment StoreEntitySet="tb_unidade">
+          <ScalarProperty Name="uni_Descricao" ColumnName="uni_Descricao" />
+          <ScalarProperty Name="uni_Id" ColumnName="uni_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_usuario">
+      <EntityTypeMapping TypeName="sql10195674Model.tb_usuario">
+        <MappingFragment StoreEntitySet="tb_usuario">
+          <ScalarProperty Name="usr_Data" ColumnName="usr_Data" />
+          <ScalarProperty Name="usr_Ativo" ColumnName="usr_Ativo" />
+          <ScalarProperty Name="usr_Nome" ColumnName="usr_Nome" />
+          <ScalarProperty Name="usr_Senha" ColumnName="usr_Senha" />
+          <ScalarProperty Name="usr_Email" ColumnName="usr_Email" />
+          <ScalarProperty Name="usr_Id" ColumnName="usr_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_mensagens">
+      <EntityTypeMapping TypeName="sql10195674Model.tb_mensagens">
+        <MappingFragment StoreEntitySet="tb_mensagens">
+          <ScalarProperty Name="msg_UsrIdEnvio" ColumnName="msg_UsrIdEnvio" />
+          <ScalarProperty Name="msg_UsrId" ColumnName="msg_UsrId" />
+          <ScalarProperty Name="msg_Lida" ColumnName="msg_Lida" />
+          <ScalarProperty Name="msg_DataHora" ColumnName="msg_DataHora" />
+          <ScalarProperty Name="msg_Texto" ColumnName="msg_Texto" />
+          <ScalarProperty Name="msg_Id" ColumnName="msg_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

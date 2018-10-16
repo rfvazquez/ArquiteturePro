@@ -1,0 +1,1297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="sql10195674Model.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tb_acessos">
+          <Key>
+            <PropertyRef Name="ace_Id" />
+          </Key>
+          <Property Name="ace_Id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ace_UsrId" Type="uint" Nullable="false" />
+          <Property Name="ace_TelasId" Type="uint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_cliente">
+          <Key>
+            <PropertyRef Name="cli_Id" />
+          </Key>
+          <Property Name="cli_Id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cli_Descricao" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="cli_Fantasia" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="cli_CpfCnpj" Type="varchar" MaxLength="30" />
+          <Property Name="cli_Logradouro" Type="varchar" MaxLength="300" />
+          <Property Name="cli_Numero" Type="varchar" MaxLength="10" />
+          <Property Name="cli_Cidade" Type="varchar" MaxLength="100" />
+          <Property Name="cli_Estado" Type="varchar" MaxLength="200" />
+          <Property Name="cli_CEP" Type="varchar" MaxLength="9" />
+          <Property Name="cli_Complemento" Type="varchar" MaxLength="200" />
+          <Property Name="cli_Contato" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="cli_Telefone" Type="varchar" MaxLength="15" />
+          <Property Name="cli_Celular" Type="varchar" MaxLength="20" />
+          <Property Name="cli_Email" Type="varchar" MaxLength="200" />
+          <Property Name="cli_Data" Type="timestamp" Precision="0" Nullable="false" />
+          <Property Name="cli_Ativo" Type="bool" Nullable="false" />
+          <Property Name="cli_Bairro" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="cli_LogradouroObra" Type="varchar" MaxLength="300" Nullable="false" />
+          <Property Name="cli_NumeroObra" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="cli_CidadeObra" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="cli_EstadoObra" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="cli_CEPObra" Type="varchar" MaxLength="9" Nullable="false" />
+          <Property Name="cli_ComplementoObra" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="cli_BairroObra" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_despesas">
+          <Key>
+            <PropertyRef Name="des_Id" />
+          </Key>
+          <Property Name="des_Id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="des_Descricao" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="des_GrfId" Type="uint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_empresa">
+          <Key>
+            <PropertyRef Name="emp_Id" />
+          </Key>
+          <Property Name="emp_Id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="emp_Nome" Type="varchar" MaxLength="255" />
+          <Property Name="emp_CNPJ" Type="varchar" MaxLength="100" />
+          <Property Name="emp_Telefone" Type="varchar" MaxLength="100" />
+          <Property Name="emp_Logradouro" Type="varchar" MaxLength="255" />
+          <Property Name="emp_Numero" Type="varchar" MaxLength="15" />
+          <Property Name="emp_Bairro" Type="varchar" MaxLength="255" />
+          <Property Name="emp_Cidade" Type="varchar" MaxLength="255" />
+          <Property Name="emp_Estado" Type="varchar" MaxLength="255" />
+          <Property Name="emp_Complemento" Type="varchar" MaxLength="255" />
+          <Property Name="emp_CEP" Type="varchar" MaxLength="20" />
+          <Property Name="emp_RazaoSocial" Type="varchar" MaxLength="255" />
+          <Property Name="emp_VersaoSistema" Type="varchar" MaxLength="45" />
+          <Property Name="emp_LocalVersao" Type="varchar" MaxLength="255" />
+          <Property Name="emp_Email" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="emp_LoginPagSeguro" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="emp_TokenPagSeguro" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="emp_TestePagSeguro" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="emp_SenhaEmail" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_fases">
+          <Key>
+            <PropertyRef Name="fas_Id" />
+          </Key>
+          <Property Name="fas_Id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fas_Descricao" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="fas_Dias" Type="uint" Nullable="false" />
+          <Property Name="fas_Ativo" Type="bool" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_fasesProjeto">
+          <Key>
+            <PropertyRef Name="fap_Id" />
+          </Key>
+          <Property Name="fap_Id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fap_FasId" Type="uint" Nullable="false" />
+          <Property Name="fap_PrjId" Type="uint" Nullable="false" />
+          <Property Name="fap_DataPrevista" Type="timestamp" Precision="0" Nullable="false" />
+          <Property Name="fap_DataReal" Type="timestamp" Precision="0" Nullable="false" />
+          <Property Name="fap_Finalizada" Type="bool" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_fluxoCaixa">
+          <Key>
+            <PropertyRef Name="flc_Id" />
+          </Key>
+          <Property Name="flc_Id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="flc_DataCadastro" Type="timestamp" Precision="0" Nullable="false" />
+          <Property Name="flc_Entrada" Type="bool" Nullable="false" />
+          <Property Name="flc_UsrId" Type="uint" Nullable="false" />
+          <Property Name="flc_Descricao" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="flc_Valor" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="flc_DataCaixa" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="flc_GrfId" Type="uint" />
+          <Property Name="flc_PagSeguro" Type="utinyint" Nullable="false" />
+          <Property Name="flc_PagamentoConfirmado" Type="utinyint" Nullable="false" />
+          <Property Name="flc_URLPagamento" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="tb_grupoFinanceiro">
+          <Key>
+            <PropertyRef Name="grf_Id" />
+          </Key>
+          <Property Name="grf_Id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="grf_Descricao" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="grf_Ativo" Type="bool" Nullable="false" />
+          <Property Name="grf_Data" Type="timestamp" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_ItemPedido">
+          <Key>
+            <PropertyRef Name="ipo_Id" />
+          </Key>
+          <Property Name="ipo_Id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ipo_SerId" Type="uint" Nullable="false" />
+          <Property Name="ipo_Qtde" Type="uint" Nullable="false" />
+          <Property Name="ipo_Valor" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="ipo_PrjId" Type="uint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_mensagens">
+          <Key>
+            <PropertyRef Name="msg_Id" />
+          </Key>
+          <Property Name="msg_Id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="msg_Texto" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="msg_DataHora" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="msg_Lida" Type="utinyint" Nullable="false" />
+          <Property Name="msg_UsrId" Type="uint" Nullable="false" />
+          <Property Name="msg_UsrIdEnvio" Type="uint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_orcamento">
+          <Key>
+            <PropertyRef Name="orc_Id" />
+          </Key>
+          <Property Name="orc_Id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="orc_SerId" Type="uint" Nullable="false" />
+          <Property Name="orc_PrjId" Type="uint" Nullable="false" />
+          <Property Name="orc_Qtde" Type="uint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_projeto">
+          <Key>
+            <PropertyRef Name="prj_Id" />
+          </Key>
+          <Property Name="prj_Id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="prj_CliId" Type="uint" Nullable="false" />
+          <Property Name="prj_DataInicio" Type="timestamp" Precision="0" Nullable="false" />
+          <Property Name="prj_DataFimPrevista" Type="timestamp" Precision="0" Nullable="false" />
+          <Property Name="prj_DataFimReal" Type="timestamp" Precision="0" Nullable="false" />
+          <Property Name="prj_UsrId" Type="uint" Nullable="false" />
+          <Property Name="prj_Obs" Type="varchar" MaxLength="20000" />
+          <Property Name="prj_PerGanho" Type="uint" Nullable="false" />
+          <Property Name="prj_Arredondamento" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_projetoFluxoCaixa">
+          <Key>
+            <PropertyRef Name="pfc_Id" />
+          </Key>
+          <Property Name="pfc_Id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pfc_PrjId" Type="uint" Nullable="false" />
+          <Property Name="pfc_FlcId" Type="uint" Nullable="false" />
+          <Property Name="pfc_Despesa" Type="bool" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_servicos">
+          <Key>
+            <PropertyRef Name="ser_Id" />
+          </Key>
+          <Property Name="ser_Id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ser_Descricao" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ser_Valor" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="ser_Ativo" Type="bool" Nullable="false" />
+          <Property Name="ser_Data" Type="timestamp" Precision="0" Nullable="false" />
+          <Property Name="ser_UniId" Type="uint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_telas">
+          <Key>
+            <PropertyRef Name="tel_Id" />
+          </Key>
+          <Property Name="tel_Id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tel_Nome" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="tel_frmPrincipal" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="tel_Icone" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_unidade">
+          <Key>
+            <PropertyRef Name="uni_Id" />
+          </Key>
+          <Property Name="uni_Id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="uni_Descricao" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_usuario">
+          <Key>
+            <PropertyRef Name="usr_Id" />
+          </Key>
+          <Property Name="usr_Id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usr_Email" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="usr_Senha" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="usr_Nome" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="usr_Ativo" Type="bool" Nullable="false" />
+          <Property Name="usr_Data" Type="timestamp" Precision="0" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_FluxoCaixa_Usuario">
+          <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="1" />
+          <End Role="tb_fluxoCaixa" Type="Self.tb_fluxoCaixa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_usuario">
+              <PropertyRef Name="usr_Id" />
+            </Principal>
+            <Dependent Role="tb_fluxoCaixa">
+              <PropertyRef Name="flc_UsrId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Projeto_Cliente">
+          <End Role="tb_cliente" Type="Self.tb_cliente" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tb_projeto" Type="Self.tb_projeto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_cliente">
+              <PropertyRef Name="cli_Id" />
+            </Principal>
+            <Dependent Role="tb_projeto">
+              <PropertyRef Name="prj_CliId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Projeto_Usuario">
+          <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="1" />
+          <End Role="tb_projeto" Type="Self.tb_projeto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_usuario">
+              <PropertyRef Name="usr_Id" />
+            </Principal>
+            <Dependent Role="tb_projeto">
+              <PropertyRef Name="prj_UsrId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Servicos_Unidade">
+          <End Role="tb_unidade" Type="Self.tb_unidade" Multiplicity="1" />
+          <End Role="tb_servicos" Type="Self.tb_servicos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_unidade">
+              <PropertyRef Name="uni_Id" />
+            </Principal>
+            <Dependent Role="tb_servicos">
+              <PropertyRef Name="ser_UniId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_acessos_Telas">
+          <End Role="tb_telas" Type="Self.tb_telas" Multiplicity="1" />
+          <End Role="tb_acessos" Type="Self.tb_acessos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_telas">
+              <PropertyRef Name="tel_Id" />
+            </Principal>
+            <Dependent Role="tb_acessos">
+              <PropertyRef Name="ace_TelasId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_acessos_Usuarios">
+          <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="1" />
+          <End Role="tb_acessos" Type="Self.tb_acessos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_usuario">
+              <PropertyRef Name="usr_Id" />
+            </Principal>
+            <Dependent Role="tb_acessos">
+              <PropertyRef Name="ace_UsrId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_despesas_GrupoFinanceiro">
+          <End Role="tb_grupoFinanceiro" Type="Self.tb_grupoFinanceiro" Multiplicity="1" />
+          <End Role="tb_despesas" Type="Self.tb_despesas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_grupoFinanceiro">
+              <PropertyRef Name="grf_Id" />
+            </Principal>
+            <Dependent Role="tb_despesas">
+              <PropertyRef Name="des_GrfId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_fasesProjeto_Fases">
+          <End Role="tb_fases" Type="Self.tb_fases" Multiplicity="1" />
+          <End Role="tb_fasesProjeto" Type="Self.tb_fasesProjeto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_fases">
+              <PropertyRef Name="fas_Id" />
+            </Principal>
+            <Dependent Role="tb_fasesProjeto">
+              <PropertyRef Name="fap_FasId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_fasesProjeto_Projeto">
+          <End Role="tb_projeto" Type="Self.tb_projeto" Multiplicity="1" />
+          <End Role="tb_fasesProjeto" Type="Self.tb_fasesProjeto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_projeto">
+              <PropertyRef Name="prj_Id" />
+            </Principal>
+            <Dependent Role="tb_fasesProjeto">
+              <PropertyRef Name="fap_PrjId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_fluxoCaixa_GrupoFinanceiro">
+          <End Role="tb_grupoFinanceiro" Type="Self.tb_grupoFinanceiro" Multiplicity="0..1" />
+          <End Role="tb_fluxoCaixa" Type="Self.tb_fluxoCaixa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_grupoFinanceiro">
+              <PropertyRef Name="grf_Id" />
+            </Principal>
+            <Dependent Role="tb_fluxoCaixa">
+              <PropertyRef Name="flc_GrfId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_ItemPedido_Projeto">
+          <End Role="tb_projeto" Type="Self.tb_projeto" Multiplicity="1" />
+          <End Role="tb_ItemPedido" Type="Self.tb_ItemPedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_projeto">
+              <PropertyRef Name="prj_Id" />
+            </Principal>
+            <Dependent Role="tb_ItemPedido">
+              <PropertyRef Name="ipo_PrjId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_ItemPedido_servicos">
+          <End Role="tb_servicos" Type="Self.tb_servicos" Multiplicity="1" />
+          <End Role="tb_ItemPedido" Type="Self.tb_ItemPedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_servicos">
+              <PropertyRef Name="ser_Id" />
+            </Principal>
+            <Dependent Role="tb_ItemPedido">
+              <PropertyRef Name="ipo_SerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_Mensagens_Usuario">
+          <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="1" />
+          <End Role="tb_mensagens" Type="Self.tb_mensagens" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_usuario">
+              <PropertyRef Name="usr_Id" />
+            </Principal>
+            <Dependent Role="tb_mensagens">
+              <PropertyRef Name="msg_UsrId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_orcamento_Projeto">
+          <End Role="tb_projeto" Type="Self.tb_projeto" Multiplicity="1" />
+          <End Role="tb_orcamento" Type="Self.tb_orcamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_projeto">
+              <PropertyRef Name="prj_Id" />
+            </Principal>
+            <Dependent Role="tb_orcamento">
+              <PropertyRef Name="orc_PrjId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_orcamento_Servico">
+          <End Role="tb_servicos" Type="Self.tb_servicos" Multiplicity="1" />
+          <End Role="tb_orcamento" Type="Self.tb_orcamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_servicos">
+              <PropertyRef Name="ser_Id" />
+            </Principal>
+            <Dependent Role="tb_orcamento">
+              <PropertyRef Name="orc_SerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_projetoFluxoCaixa_FluxoCaixa">
+          <End Role="tb_fluxoCaixa" Type="Self.tb_fluxoCaixa" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tb_projetoFluxoCaixa" Type="Self.tb_projetoFluxoCaixa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_fluxoCaixa">
+              <PropertyRef Name="flc_Id" />
+            </Principal>
+            <Dependent Role="tb_projetoFluxoCaixa">
+              <PropertyRef Name="pfc_FlcId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_projetoFluxoCaixa_Projeto">
+          <End Role="tb_projeto" Type="Self.tb_projeto" Multiplicity="1" />
+          <End Role="tb_projetoFluxoCaixa" Type="Self.tb_projetoFluxoCaixa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_projeto">
+              <PropertyRef Name="prj_Id" />
+            </Principal>
+            <Dependent Role="tb_projetoFluxoCaixa">
+              <PropertyRef Name="pfc_PrjId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="sql10195674ModelStoreContainer">
+          <EntitySet Name="tb_acessos" EntityType="Self.tb_acessos" Schema="sql10195674" store:Type="Tables" />
+          <EntitySet Name="tb_cliente" EntityType="Self.tb_cliente" Schema="sql10195674" store:Type="Tables" />
+          <EntitySet Name="tb_despesas" EntityType="Self.tb_despesas" Schema="sql10195674" store:Type="Tables" />
+          <EntitySet Name="tb_empresa" EntityType="Self.tb_empresa" Schema="sql10195674" store:Type="Tables" />
+          <EntitySet Name="tb_fases" EntityType="Self.tb_fases" Schema="sql10195674" store:Type="Tables" />
+          <EntitySet Name="tb_fasesProjeto" EntityType="Self.tb_fasesProjeto" Schema="sql10195674" store:Type="Tables" />
+          <EntitySet Name="tb_fluxoCaixa" EntityType="Self.tb_fluxoCaixa" Schema="sql10195674" store:Type="Tables" />
+          <EntitySet Name="tb_grupoFinanceiro" EntityType="Self.tb_grupoFinanceiro" Schema="sql10195674" store:Type="Tables" />
+          <EntitySet Name="tb_ItemPedido" EntityType="Self.tb_ItemPedido" Schema="sql10195674" store:Type="Tables" />
+          <EntitySet Name="tb_mensagens" EntityType="Self.tb_mensagens" Schema="sql10195674" store:Type="Tables" />
+          <EntitySet Name="tb_orcamento" EntityType="Self.tb_orcamento" Schema="sql10195674" store:Type="Tables" />
+          <EntitySet Name="tb_projeto" EntityType="Self.tb_projeto" Schema="sql10195674" store:Type="Tables" />
+          <EntitySet Name="tb_projetoFluxoCaixa" EntityType="Self.tb_projetoFluxoCaixa" Schema="sql10195674" store:Type="Tables" />
+          <EntitySet Name="tb_servicos" EntityType="Self.tb_servicos" Schema="sql10195674" store:Type="Tables" />
+          <EntitySet Name="tb_telas" EntityType="Self.tb_telas" Schema="sql10195674" store:Type="Tables" />
+          <EntitySet Name="tb_unidade" EntityType="Self.tb_unidade" Schema="sql10195674" store:Type="Tables" />
+          <EntitySet Name="tb_usuario" EntityType="Self.tb_usuario" Schema="sql10195674" store:Type="Tables" />
+          <AssociationSet Name="FK_FluxoCaixa_Usuario" Association="Self.FK_FluxoCaixa_Usuario">
+            <End Role="tb_usuario" EntitySet="tb_usuario" />
+            <End Role="tb_fluxoCaixa" EntitySet="tb_fluxoCaixa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Projeto_Cliente" Association="Self.FK_Projeto_Cliente">
+            <End Role="tb_cliente" EntitySet="tb_cliente" />
+            <End Role="tb_projeto" EntitySet="tb_projeto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Projeto_Usuario" Association="Self.FK_Projeto_Usuario">
+            <End Role="tb_usuario" EntitySet="tb_usuario" />
+            <End Role="tb_projeto" EntitySet="tb_projeto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Servicos_Unidade" Association="Self.FK_Servicos_Unidade">
+            <End Role="tb_unidade" EntitySet="tb_unidade" />
+            <End Role="tb_servicos" EntitySet="tb_servicos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_acessos_Telas" Association="Self.FK_tb_acessos_Telas">
+            <End Role="tb_telas" EntitySet="tb_telas" />
+            <End Role="tb_acessos" EntitySet="tb_acessos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_acessos_Usuarios" Association="Self.FK_tb_acessos_Usuarios">
+            <End Role="tb_usuario" EntitySet="tb_usuario" />
+            <End Role="tb_acessos" EntitySet="tb_acessos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_despesas_GrupoFinanceiro" Association="Self.FK_tb_despesas_GrupoFinanceiro">
+            <End Role="tb_grupoFinanceiro" EntitySet="tb_grupoFinanceiro" />
+            <End Role="tb_despesas" EntitySet="tb_despesas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_fasesProjeto_Fases" Association="Self.FK_tb_fasesProjeto_Fases">
+            <End Role="tb_fases" EntitySet="tb_fases" />
+            <End Role="tb_fasesProjeto" EntitySet="tb_fasesProjeto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_fasesProjeto_Projeto" Association="Self.FK_tb_fasesProjeto_Projeto">
+            <End Role="tb_projeto" EntitySet="tb_projeto" />
+            <End Role="tb_fasesProjeto" EntitySet="tb_fasesProjeto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_fluxoCaixa_GrupoFinanceiro" Association="Self.FK_tb_fluxoCaixa_GrupoFinanceiro">
+            <End Role="tb_grupoFinanceiro" EntitySet="tb_grupoFinanceiro" />
+            <End Role="tb_fluxoCaixa" EntitySet="tb_fluxoCaixa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_ItemPedido_Projeto" Association="Self.FK_tb_ItemPedido_Projeto">
+            <End Role="tb_projeto" EntitySet="tb_projeto" />
+            <End Role="tb_ItemPedido" EntitySet="tb_ItemPedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_ItemPedido_servicos" Association="Self.FK_tb_ItemPedido_servicos">
+            <End Role="tb_servicos" EntitySet="tb_servicos" />
+            <End Role="tb_ItemPedido" EntitySet="tb_ItemPedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_Mensagens_Usuario" Association="Self.FK_tb_Mensagens_Usuario">
+            <End Role="tb_usuario" EntitySet="tb_usuario" />
+            <End Role="tb_mensagens" EntitySet="tb_mensagens" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_orcamento_Projeto" Association="Self.FK_tb_orcamento_Projeto">
+            <End Role="tb_projeto" EntitySet="tb_projeto" />
+            <End Role="tb_orcamento" EntitySet="tb_orcamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_orcamento_Servico" Association="Self.FK_tb_orcamento_Servico">
+            <End Role="tb_servicos" EntitySet="tb_servicos" />
+            <End Role="tb_orcamento" EntitySet="tb_orcamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_projetoFluxoCaixa_FluxoCaixa" Association="Self.FK_tb_projetoFluxoCaixa_FluxoCaixa">
+            <End Role="tb_fluxoCaixa" EntitySet="tb_fluxoCaixa" />
+            <End Role="tb_projetoFluxoCaixa" EntitySet="tb_projetoFluxoCaixa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_projetoFluxoCaixa_Projeto" Association="Self.FK_tb_projetoFluxoCaixa_Projeto">
+            <End Role="tb_projeto" EntitySet="tb_projeto" />
+            <End Role="tb_projetoFluxoCaixa" EntitySet="tb_projetoFluxoCaixa" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="sql10195674Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="CamilaMoraes" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tb_acessos" EntityType="sql10195674Model.tb_acessos" />
+          <EntitySet Name="tb_cliente" EntityType="sql10195674Model.tb_cliente" />
+          <EntitySet Name="tb_despesas" EntityType="sql10195674Model.tb_despesas" />
+          <EntitySet Name="tb_empresa" EntityType="sql10195674Model.tb_empresa" />
+          <EntitySet Name="tb_fases" EntityType="sql10195674Model.tb_fases" />
+          <EntitySet Name="tb_fasesProjeto" EntityType="sql10195674Model.tb_fasesProjeto" />
+          <EntitySet Name="tb_fluxoCaixa" EntityType="sql10195674Model.tb_fluxoCaixa" />
+          <EntitySet Name="tb_grupoFinanceiro" EntityType="sql10195674Model.tb_grupoFinanceiro" />
+          <EntitySet Name="tb_ItemPedido" EntityType="sql10195674Model.tb_ItemPedido" />
+          <EntitySet Name="tb_orcamento" EntityType="sql10195674Model.tb_orcamento" />
+          <EntitySet Name="tb_projeto" EntityType="sql10195674Model.tb_projeto" />
+          <EntitySet Name="tb_projetoFluxoCaixa" EntityType="sql10195674Model.tb_projetoFluxoCaixa" />
+          <EntitySet Name="tb_servicos" EntityType="sql10195674Model.tb_servicos" />
+          <EntitySet Name="tb_telas" EntityType="sql10195674Model.tb_telas" />
+          <EntitySet Name="tb_unidade" EntityType="sql10195674Model.tb_unidade" />
+          <EntitySet Name="tb_usuario" EntityType="sql10195674Model.tb_usuario" />
+          <AssociationSet Name="FK_tb_acessos_Telas" Association="sql10195674Model.FK_tb_acessos_Telas">
+            <End Role="tb_telas" EntitySet="tb_telas" />
+            <End Role="tb_acessos" EntitySet="tb_acessos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_acessos_Usuarios" Association="sql10195674Model.FK_tb_acessos_Usuarios">
+            <End Role="tb_usuario" EntitySet="tb_usuario" />
+            <End Role="tb_acessos" EntitySet="tb_acessos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Projeto_Cliente" Association="sql10195674Model.FK_Projeto_Cliente">
+            <End Role="tb_cliente" EntitySet="tb_cliente" />
+            <End Role="tb_projeto" EntitySet="tb_projeto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_despesas_GrupoFinanceiro" Association="sql10195674Model.FK_tb_despesas_GrupoFinanceiro">
+            <End Role="tb_grupoFinanceiro" EntitySet="tb_grupoFinanceiro" />
+            <End Role="tb_despesas" EntitySet="tb_despesas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_fasesProjeto_Fases" Association="sql10195674Model.FK_tb_fasesProjeto_Fases">
+            <End Role="tb_fases" EntitySet="tb_fases" />
+            <End Role="tb_fasesProjeto" EntitySet="tb_fasesProjeto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_fasesProjeto_Projeto" Association="sql10195674Model.FK_tb_fasesProjeto_Projeto">
+            <End Role="tb_projeto" EntitySet="tb_projeto" />
+            <End Role="tb_fasesProjeto" EntitySet="tb_fasesProjeto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FluxoCaixa_Usuario" Association="sql10195674Model.FK_FluxoCaixa_Usuario">
+            <End Role="tb_usuario" EntitySet="tb_usuario" />
+            <End Role="tb_fluxoCaixa" EntitySet="tb_fluxoCaixa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_fluxoCaixa_GrupoFinanceiro" Association="sql10195674Model.FK_tb_fluxoCaixa_GrupoFinanceiro">
+            <End Role="tb_grupoFinanceiro" EntitySet="tb_grupoFinanceiro" />
+            <End Role="tb_fluxoCaixa" EntitySet="tb_fluxoCaixa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_projetoFluxoCaixa_FluxoCaixa" Association="sql10195674Model.FK_tb_projetoFluxoCaixa_FluxoCaixa">
+            <End Role="tb_fluxoCaixa" EntitySet="tb_fluxoCaixa" />
+            <End Role="tb_projetoFluxoCaixa" EntitySet="tb_projetoFluxoCaixa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_ItemPedido_Projeto" Association="sql10195674Model.FK_tb_ItemPedido_Projeto">
+            <End Role="tb_projeto" EntitySet="tb_projeto" />
+            <End Role="tb_ItemPedido" EntitySet="tb_ItemPedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_ItemPedido_servicos" Association="sql10195674Model.FK_tb_ItemPedido_servicos">
+            <End Role="tb_servicos" EntitySet="tb_servicos" />
+            <End Role="tb_ItemPedido" EntitySet="tb_ItemPedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_orcamento_Projeto" Association="sql10195674Model.FK_tb_orcamento_Projeto">
+            <End Role="tb_projeto" EntitySet="tb_projeto" />
+            <End Role="tb_orcamento" EntitySet="tb_orcamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_orcamento_Servico" Association="sql10195674Model.FK_tb_orcamento_Servico">
+            <End Role="tb_servicos" EntitySet="tb_servicos" />
+            <End Role="tb_orcamento" EntitySet="tb_orcamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Projeto_Usuario" Association="sql10195674Model.FK_Projeto_Usuario">
+            <End Role="tb_usuario" EntitySet="tb_usuario" />
+            <End Role="tb_projeto" EntitySet="tb_projeto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_projetoFluxoCaixa_Projeto" Association="sql10195674Model.FK_tb_projetoFluxoCaixa_Projeto">
+            <End Role="tb_projeto" EntitySet="tb_projeto" />
+            <End Role="tb_projetoFluxoCaixa" EntitySet="tb_projetoFluxoCaixa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Servicos_Unidade" Association="sql10195674Model.FK_Servicos_Unidade">
+            <End Role="tb_unidade" EntitySet="tb_unidade" />
+            <End Role="tb_servicos" EntitySet="tb_servicos" />
+          </AssociationSet>
+          <EntitySet Name="tb_mensagens" EntityType="sql10195674Model.tb_mensagens" />
+          <AssociationSet Name="FK_tb_Mensagens_Usuario" Association="sql10195674Model.FK_tb_Mensagens_Usuario">
+            <End Role="tb_usuario" EntitySet="tb_usuario" />
+            <End Role="tb_mensagens" EntitySet="tb_mensagens" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tb_acessos">
+          <Key>
+            <PropertyRef Name="ace_Id" />
+          </Key>
+          <Property Name="ace_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ace_UsrId" Type="Int64" Nullable="false" />
+          <Property Name="ace_TelasId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="tb_telas" Relationship="sql10195674Model.FK_tb_acessos_Telas" FromRole="tb_acessos" ToRole="tb_telas" />
+          <NavigationProperty Name="tb_usuario" Relationship="sql10195674Model.FK_tb_acessos_Usuarios" FromRole="tb_acessos" ToRole="tb_usuario" />
+        </EntityType>
+        <EntityType Name="tb_cliente">
+          <Key>
+            <PropertyRef Name="cli_Id" />
+          </Key>
+          <Property Name="cli_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cli_Descricao" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="cli_Fantasia" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="cli_CpfCnpj" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="cli_Logradouro" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="cli_Numero" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="cli_Cidade" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="cli_Estado" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="cli_CEP" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="cli_Complemento" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="cli_Contato" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="cli_Telefone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="cli_Celular" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="cli_Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="cli_Data" Type="DateTime" Nullable="false" />
+          <Property Name="cli_Ativo" Type="Boolean" Nullable="false" />
+          <Property Name="cli_Bairro" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="cli_LogradouroObra" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="cli_NumeroObra" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="cli_CidadeObra" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="cli_EstadoObra" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="cli_CEPObra" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="cli_ComplementoObra" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="cli_BairroObra" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tb_projeto" Relationship="sql10195674Model.FK_Projeto_Cliente" FromRole="tb_cliente" ToRole="tb_projeto" />
+        </EntityType>
+        <EntityType Name="tb_despesas">
+          <Key>
+            <PropertyRef Name="des_Id" />
+          </Key>
+          <Property Name="des_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="des_Descricao" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="des_GrfId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="tb_grupoFinanceiro" Relationship="sql10195674Model.FK_tb_despesas_GrupoFinanceiro" FromRole="tb_despesas" ToRole="tb_grupoFinanceiro" />
+        </EntityType>
+        <EntityType Name="tb_empresa">
+          <Key>
+            <PropertyRef Name="emp_Id" />
+          </Key>
+          <Property Name="emp_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="emp_Nome" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="emp_CNPJ" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="emp_Telefone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="emp_Logradouro" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="emp_Numero" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="emp_Bairro" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="emp_Cidade" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="emp_Estado" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="emp_Complemento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="emp_CEP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="emp_RazaoSocial" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="emp_VersaoSistema" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="emp_LocalVersao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="emp_Email" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="emp_LoginPagSeguro" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="emp_TokenPagSeguro" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="emp_TestePagSeguro" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="emp_SenhaEmail" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tb_fases">
+          <Key>
+            <PropertyRef Name="fas_Id" />
+          </Key>
+          <Property Name="fas_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fas_Descricao" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="fas_Dias" Type="Int64" Nullable="false" />
+          <Property Name="fas_Ativo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tb_fasesProjeto" Relationship="sql10195674Model.FK_tb_fasesProjeto_Fases" FromRole="tb_fases" ToRole="tb_fasesProjeto" />
+        </EntityType>
+        <EntityType Name="tb_fasesProjeto">
+          <Key>
+            <PropertyRef Name="fap_Id" />
+          </Key>
+          <Property Name="fap_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fap_FasId" Type="Int64" Nullable="false" />
+          <Property Name="fap_PrjId" Type="Int64" Nullable="false" />
+          <Property Name="fap_DataPrevista" Type="DateTime" Nullable="false" />
+          <Property Name="fap_DataReal" Type="DateTime" Nullable="false" />
+          <Property Name="fap_Finalizada" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tb_fases" Relationship="sql10195674Model.FK_tb_fasesProjeto_Fases" FromRole="tb_fasesProjeto" ToRole="tb_fases" />
+          <NavigationProperty Name="tb_projeto" Relationship="sql10195674Model.FK_tb_fasesProjeto_Projeto" FromRole="tb_fasesProjeto" ToRole="tb_projeto" />
+        </EntityType>
+        <EntityType Name="tb_fluxoCaixa">
+          <Key>
+            <PropertyRef Name="flc_Id" />
+          </Key>
+          <Property Name="flc_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="flc_DataCadastro" Type="DateTime" Nullable="false" />
+          <Property Name="flc_Entrada" Type="Boolean" Nullable="false" />
+          <Property Name="flc_UsrId" Type="Int64" Nullable="false" />
+          <Property Name="flc_Descricao" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="flc_Valor" Type="Decimal" Nullable="false" />
+          <Property Name="flc_DataCaixa" Type="DateTime" Nullable="false" />
+          <Property Name="flc_GrfId" Type="Int64" />
+          <Property Name="flc_PagSeguro" Type="Byte" Nullable="false" />
+          <Property Name="flc_PagamentoConfirmado" Type="Byte" Nullable="false" />
+          <Property Name="flc_URLPagamento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tb_usuario" Relationship="sql10195674Model.FK_FluxoCaixa_Usuario" FromRole="tb_fluxoCaixa" ToRole="tb_usuario" />
+          <NavigationProperty Name="tb_grupoFinanceiro" Relationship="sql10195674Model.FK_tb_fluxoCaixa_GrupoFinanceiro" FromRole="tb_fluxoCaixa" ToRole="tb_grupoFinanceiro" />
+          <NavigationProperty Name="tb_projetoFluxoCaixa" Relationship="sql10195674Model.FK_tb_projetoFluxoCaixa_FluxoCaixa" FromRole="tb_fluxoCaixa" ToRole="tb_projetoFluxoCaixa" />
+        </EntityType>
+        <EntityType Name="tb_grupoFinanceiro">
+          <Key>
+            <PropertyRef Name="grf_Id" />
+          </Key>
+          <Property Name="grf_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="grf_Descricao" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="grf_Ativo" Type="Boolean" Nullable="false" />
+          <Property Name="grf_Data" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="tb_despesas" Relationship="sql10195674Model.FK_tb_despesas_GrupoFinanceiro" FromRole="tb_grupoFinanceiro" ToRole="tb_despesas" />
+          <NavigationProperty Name="tb_fluxoCaixa" Relationship="sql10195674Model.FK_tb_fluxoCaixa_GrupoFinanceiro" FromRole="tb_grupoFinanceiro" ToRole="tb_fluxoCaixa" />
+        </EntityType>
+        <EntityType Name="tb_ItemPedido">
+          <Key>
+            <PropertyRef Name="ipo_Id" />
+          </Key>
+          <Property Name="ipo_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ipo_SerId" Type="Int64" Nullable="false" />
+          <Property Name="ipo_Qtde" Type="Int64" Nullable="false" />
+          <Property Name="ipo_Valor" Type="Decimal" Nullable="false" />
+          <Property Name="ipo_PrjId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="tb_projeto" Relationship="sql10195674Model.FK_tb_ItemPedido_Projeto" FromRole="tb_ItemPedido" ToRole="tb_projeto" />
+          <NavigationProperty Name="tb_servicos" Relationship="sql10195674Model.FK_tb_ItemPedido_servicos" FromRole="tb_ItemPedido" ToRole="tb_servicos" />
+        </EntityType>
+        <EntityType Name="tb_orcamento">
+          <Key>
+            <PropertyRef Name="orc_Id" />
+          </Key>
+          <Property Name="orc_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="orc_SerId" Type="Int64" Nullable="false" />
+          <Property Name="orc_PrjId" Type="Int64" Nullable="false" />
+          <Property Name="orc_Qtde" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="tb_projeto" Relationship="sql10195674Model.FK_tb_orcamento_Projeto" FromRole="tb_orcamento" ToRole="tb_projeto" />
+          <NavigationProperty Name="tb_servicos" Relationship="sql10195674Model.FK_tb_orcamento_Servico" FromRole="tb_orcamento" ToRole="tb_servicos" />
+        </EntityType>
+        <EntityType Name="tb_projeto">
+          <Key>
+            <PropertyRef Name="prj_Id" />
+          </Key>
+          <Property Name="prj_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="prj_CliId" Type="Int64" Nullable="false" />
+          <Property Name="prj_DataInicio" Type="DateTime" Nullable="false" />
+          <Property Name="prj_DataFimPrevista" Type="DateTime" Nullable="false" />
+          <Property Name="prj_DataFimReal" Type="DateTime" Nullable="false" />
+          <Property Name="prj_UsrId" Type="Int64" Nullable="false" />
+          <Property Name="prj_Obs" Type="String" MaxLength="20000" FixedLength="false" Unicode="false" />
+          <Property Name="prj_PerGanho" Type="Int64" Nullable="false" />
+          <Property Name="prj_Arredondamento" Type="Decimal" Nullable="false" />
+          <NavigationProperty Name="tb_cliente" Relationship="sql10195674Model.FK_Projeto_Cliente" FromRole="tb_projeto" ToRole="tb_cliente" />
+          <NavigationProperty Name="tb_fasesProjeto" Relationship="sql10195674Model.FK_tb_fasesProjeto_Projeto" FromRole="tb_projeto" ToRole="tb_fasesProjeto" />
+          <NavigationProperty Name="tb_ItemPedido" Relationship="sql10195674Model.FK_tb_ItemPedido_Projeto" FromRole="tb_projeto" ToRole="tb_ItemPedido" />
+          <NavigationProperty Name="tb_orcamento" Relationship="sql10195674Model.FK_tb_orcamento_Projeto" FromRole="tb_projeto" ToRole="tb_orcamento" />
+          <NavigationProperty Name="tb_usuario" Relationship="sql10195674Model.FK_Projeto_Usuario" FromRole="tb_projeto" ToRole="tb_usuario" />
+          <NavigationProperty Name="tb_projetoFluxoCaixa" Relationship="sql10195674Model.FK_tb_projetoFluxoCaixa_Projeto" FromRole="tb_projeto" ToRole="tb_projetoFluxoCaixa" />
+        </EntityType>
+        <EntityType Name="tb_projetoFluxoCaixa">
+          <Key>
+            <PropertyRef Name="pfc_Id" />
+          </Key>
+          <Property Name="pfc_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pfc_PrjId" Type="Int64" Nullable="false" />
+          <Property Name="pfc_FlcId" Type="Int64" Nullable="false" />
+          <Property Name="pfc_Despesa" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tb_fluxoCaixa" Relationship="sql10195674Model.FK_tb_projetoFluxoCaixa_FluxoCaixa" FromRole="tb_projetoFluxoCaixa" ToRole="tb_fluxoCaixa" />
+          <NavigationProperty Name="tb_projeto" Relationship="sql10195674Model.FK_tb_projetoFluxoCaixa_Projeto" FromRole="tb_projetoFluxoCaixa" ToRole="tb_projeto" />
+        </EntityType>
+        <EntityType Name="tb_servicos">
+          <Key>
+            <PropertyRef Name="ser_Id" />
+          </Key>
+          <Property Name="ser_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ser_Descricao" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ser_Valor" Type="Decimal" Nullable="false" />
+          <Property Name="ser_Ativo" Type="Boolean" Nullable="false" />
+          <Property Name="ser_Data" Type="DateTime" Nullable="false" />
+          <Property Name="ser_UniId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="tb_ItemPedido" Relationship="sql10195674Model.FK_tb_ItemPedido_servicos" FromRole="tb_servicos" ToRole="tb_ItemPedido" />
+          <NavigationProperty Name="tb_orcamento" Relationship="sql10195674Model.FK_tb_orcamento_Servico" FromRole="tb_servicos" ToRole="tb_orcamento" />
+          <NavigationProperty Name="tb_unidade" Relationship="sql10195674Model.FK_Servicos_Unidade" FromRole="tb_servicos" ToRole="tb_unidade" />
+        </EntityType>
+        <EntityType Name="tb_telas">
+          <Key>
+            <PropertyRef Name="tel_Id" />
+          </Key>
+          <Property Name="tel_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tel_Nome" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="tel_frmPrincipal" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="tel_Icone" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tb_acessos" Relationship="sql10195674Model.FK_tb_acessos_Telas" FromRole="tb_telas" ToRole="tb_acessos" />
+        </EntityType>
+        <EntityType Name="tb_unidade">
+          <Key>
+            <PropertyRef Name="uni_Id" />
+          </Key>
+          <Property Name="uni_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="uni_Descricao" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tb_servicos" Relationship="sql10195674Model.FK_Servicos_Unidade" FromRole="tb_unidade" ToRole="tb_servicos" />
+        </EntityType>
+        <EntityType Name="tb_usuario">
+          <Key>
+            <PropertyRef Name="usr_Id" />
+          </Key>
+          <Property Name="usr_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usr_Email" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="usr_Senha" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="usr_Nome" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="usr_Ativo" Type="Boolean" Nullable="false" />
+          <Property Name="usr_Data" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="tb_acessos" Relationship="sql10195674Model.FK_tb_acessos_Usuarios" FromRole="tb_usuario" ToRole="tb_acessos" />
+          <NavigationProperty Name="tb_fluxoCaixa" Relationship="sql10195674Model.FK_FluxoCaixa_Usuario" FromRole="tb_usuario" ToRole="tb_fluxoCaixa" />
+          <NavigationProperty Name="tb_projeto" Relationship="sql10195674Model.FK_Projeto_Usuario" FromRole="tb_usuario" ToRole="tb_projeto" />
+          <NavigationProperty Name="tb_mensagens" Relationship="sql10195674Model.FK_tb_Mensagens_Usuario" FromRole="tb_usuario" ToRole="tb_mensagens" />
+        </EntityType>
+        <Association Name="FK_tb_acessos_Telas">
+          <End Type="sql10195674Model.tb_telas" Role="tb_telas" Multiplicity="1" />
+          <End Type="sql10195674Model.tb_acessos" Role="tb_acessos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_telas">
+              <PropertyRef Name="tel_Id" />
+            </Principal>
+            <Dependent Role="tb_acessos">
+              <PropertyRef Name="ace_TelasId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_acessos_Usuarios">
+          <End Type="sql10195674Model.tb_usuario" Role="tb_usuario" Multiplicity="1" />
+          <End Type="sql10195674Model.tb_acessos" Role="tb_acessos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_usuario">
+              <PropertyRef Name="usr_Id" />
+            </Principal>
+            <Dependent Role="tb_acessos">
+              <PropertyRef Name="ace_UsrId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Projeto_Cliente">
+          <End Type="sql10195674Model.tb_cliente" Role="tb_cliente" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="sql10195674Model.tb_projeto" Role="tb_projeto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_cliente">
+              <PropertyRef Name="cli_Id" />
+            </Principal>
+            <Dependent Role="tb_projeto">
+              <PropertyRef Name="prj_CliId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_despesas_GrupoFinanceiro">
+          <End Type="sql10195674Model.tb_grupoFinanceiro" Role="tb_grupoFinanceiro" Multiplicity="1" />
+          <End Type="sql10195674Model.tb_despesas" Role="tb_despesas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_grupoFinanceiro">
+              <PropertyRef Name="grf_Id" />
+            </Principal>
+            <Dependent Role="tb_despesas">
+              <PropertyRef Name="des_GrfId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_fasesProjeto_Fases">
+          <End Type="sql10195674Model.tb_fases" Role="tb_fases" Multiplicity="1" />
+          <End Type="sql10195674Model.tb_fasesProjeto" Role="tb_fasesProjeto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_fases">
+              <PropertyRef Name="fas_Id" />
+            </Principal>
+            <Dependent Role="tb_fasesProjeto">
+              <PropertyRef Name="fap_FasId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_fasesProjeto_Projeto">
+          <End Type="sql10195674Model.tb_projeto" Role="tb_projeto" Multiplicity="1" />
+          <End Type="sql10195674Model.tb_fasesProjeto" Role="tb_fasesProjeto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_projeto">
+              <PropertyRef Name="prj_Id" />
+            </Principal>
+            <Dependent Role="tb_fasesProjeto">
+              <PropertyRef Name="fap_PrjId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FluxoCaixa_Usuario">
+          <End Type="sql10195674Model.tb_usuario" Role="tb_usuario" Multiplicity="1" />
+          <End Type="sql10195674Model.tb_fluxoCaixa" Role="tb_fluxoCaixa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_usuario">
+              <PropertyRef Name="usr_Id" />
+            </Principal>
+            <Dependent Role="tb_fluxoCaixa">
+              <PropertyRef Name="flc_UsrId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_fluxoCaixa_GrupoFinanceiro">
+          <End Type="sql10195674Model.tb_grupoFinanceiro" Role="tb_grupoFinanceiro" Multiplicity="0..1" />
+          <End Type="sql10195674Model.tb_fluxoCaixa" Role="tb_fluxoCaixa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_grupoFinanceiro">
+              <PropertyRef Name="grf_Id" />
+            </Principal>
+            <Dependent Role="tb_fluxoCaixa">
+              <PropertyRef Name="flc_GrfId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_projetoFluxoCaixa_FluxoCaixa">
+          <End Type="sql10195674Model.tb_fluxoCaixa" Role="tb_fluxoCaixa" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="sql10195674Model.tb_projetoFluxoCaixa" Role="tb_projetoFluxoCaixa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_fluxoCaixa">
+              <PropertyRef Name="flc_Id" />
+            </Principal>
+            <Dependent Role="tb_projetoFluxoCaixa">
+              <PropertyRef Name="pfc_FlcId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_ItemPedido_Projeto">
+          <End Type="sql10195674Model.tb_projeto" Role="tb_projeto" Multiplicity="1" />
+          <End Type="sql10195674Model.tb_ItemPedido" Role="tb_ItemPedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_projeto">
+              <PropertyRef Name="prj_Id" />
+            </Principal>
+            <Dependent Role="tb_ItemPedido">
+              <PropertyRef Name="ipo_PrjId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_ItemPedido_servicos">
+          <End Type="sql10195674Model.tb_servicos" Role="tb_servicos" Multiplicity="1" />
+          <End Type="sql10195674Model.tb_ItemPedido" Role="tb_ItemPedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_servicos">
+              <PropertyRef Name="ser_Id" />
+            </Principal>
+            <Dependent Role="tb_ItemPedido">
+              <PropertyRef Name="ipo_SerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_orcamento_Projeto">
+          <End Type="sql10195674Model.tb_projeto" Role="tb_projeto" Multiplicity="1" />
+          <End Type="sql10195674Model.tb_orcamento" Role="tb_orcamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_projeto">
+              <PropertyRef Name="prj_Id" />
+            </Principal>
+            <Dependent Role="tb_orcamento">
+              <PropertyRef Name="orc_PrjId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_orcamento_Servico">
+          <End Type="sql10195674Model.tb_servicos" Role="tb_servicos" Multiplicity="1" />
+          <End Type="sql10195674Model.tb_orcamento" Role="tb_orcamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_servicos">
+              <PropertyRef Name="ser_Id" />
+            </Principal>
+            <Dependent Role="tb_orcamento">
+              <PropertyRef Name="orc_SerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Projeto_Usuario">
+          <End Type="sql10195674Model.tb_usuario" Role="tb_usuario" Multiplicity="1" />
+          <End Type="sql10195674Model.tb_projeto" Role="tb_projeto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_usuario">
+              <PropertyRef Name="usr_Id" />
+            </Principal>
+            <Dependent Role="tb_projeto">
+              <PropertyRef Name="prj_UsrId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_projetoFluxoCaixa_Projeto">
+          <End Type="sql10195674Model.tb_projeto" Role="tb_projeto" Multiplicity="1" />
+          <End Type="sql10195674Model.tb_projetoFluxoCaixa" Role="tb_projetoFluxoCaixa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_projeto">
+              <PropertyRef Name="prj_Id" />
+            </Principal>
+            <Dependent Role="tb_projetoFluxoCaixa">
+              <PropertyRef Name="pfc_PrjId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Servicos_Unidade">
+          <End Type="sql10195674Model.tb_unidade" Role="tb_unidade" Multiplicity="1" />
+          <End Type="sql10195674Model.tb_servicos" Role="tb_servicos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_unidade">
+              <PropertyRef Name="uni_Id" />
+            </Principal>
+            <Dependent Role="tb_servicos">
+              <PropertyRef Name="ser_UniId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tb_mensagens">
+          <Key>
+            <PropertyRef Name="msg_Id" />
+          </Key>
+          <Property Name="msg_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="msg_Texto" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="msg_DataHora" Type="DateTime" Nullable="false" />
+          <Property Name="msg_Lida" Type="Byte" Nullable="false" />
+          <Property Name="msg_UsrId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="tb_usuario" Relationship="sql10195674Model.FK_tb_Mensagens_Usuario" FromRole="tb_mensagens" ToRole="tb_usuario" />
+          <Property Name="msg_UsrIdEnvio" Type="Int64" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_tb_Mensagens_Usuario">
+          <End Type="sql10195674Model.tb_usuario" Role="tb_usuario" Multiplicity="1" />
+          <End Type="sql10195674Model.tb_mensagens" Role="tb_mensagens" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_usuario">
+              <PropertyRef Name="usr_Id" />
+            </Principal>
+            <Dependent Role="tb_mensagens">
+              <PropertyRef Name="msg_UsrId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="sql10195674ModelStoreContainer" CdmEntityContainer="CamilaMoraes">
+          <EntitySetMapping Name="tb_acessos">
+            <EntityTypeMapping TypeName="sql10195674Model.tb_acessos">
+              <MappingFragment StoreEntitySet="tb_acessos">
+                <ScalarProperty Name="ace_TelasId" ColumnName="ace_TelasId" />
+                <ScalarProperty Name="ace_UsrId" ColumnName="ace_UsrId" />
+                <ScalarProperty Name="ace_Id" ColumnName="ace_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_cliente">
+            <EntityTypeMapping TypeName="sql10195674Model.tb_cliente">
+              <MappingFragment StoreEntitySet="tb_cliente">
+                <ScalarProperty Name="cli_BairroObra" ColumnName="cli_BairroObra" />
+                <ScalarProperty Name="cli_ComplementoObra" ColumnName="cli_ComplementoObra" />
+                <ScalarProperty Name="cli_CEPObra" ColumnName="cli_CEPObra" />
+                <ScalarProperty Name="cli_EstadoObra" ColumnName="cli_EstadoObra" />
+                <ScalarProperty Name="cli_CidadeObra" ColumnName="cli_CidadeObra" />
+                <ScalarProperty Name="cli_NumeroObra" ColumnName="cli_NumeroObra" />
+                <ScalarProperty Name="cli_LogradouroObra" ColumnName="cli_LogradouroObra" />
+                <ScalarProperty Name="cli_Bairro" ColumnName="cli_Bairro" />
+                <ScalarProperty Name="cli_Ativo" ColumnName="cli_Ativo" />
+                <ScalarProperty Name="cli_Data" ColumnName="cli_Data" />
+                <ScalarProperty Name="cli_Email" ColumnName="cli_Email" />
+                <ScalarProperty Name="cli_Celular" ColumnName="cli_Celular" />
+                <ScalarProperty Name="cli_Telefone" ColumnName="cli_Telefone" />
+                <ScalarProperty Name="cli_Contato" ColumnName="cli_Contato" />
+                <ScalarProperty Name="cli_Complemento" ColumnName="cli_Complemento" />
+                <ScalarProperty Name="cli_CEP" ColumnName="cli_CEP" />
+                <ScalarProperty Name="cli_Estado" ColumnName="cli_Estado" />
+                <ScalarProperty Name="cli_Cidade" ColumnName="cli_Cidade" />
+                <ScalarProperty Name="cli_Numero" ColumnName="cli_Numero" />
+                <ScalarProperty Name="cli_Logradouro" ColumnName="cli_Logradouro" />
+                <ScalarProperty Name="cli_CpfCnpj" ColumnName="cli_CpfCnpj" />
+                <ScalarProperty Name="cli_Fantasia" ColumnName="cli_Fantasia" />
+                <ScalarProperty Name="cli_Descricao" ColumnName="cli_Descricao" />
+                <ScalarProperty Name="cli_Id" ColumnName="cli_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_despesas">
+            <EntityTypeMapping TypeName="sql10195674Model.tb_despesas">
+              <MappingFragment StoreEntitySet="tb_despesas">
+                <ScalarProperty Name="des_GrfId" ColumnName="des_GrfId" />
+                <ScalarProperty Name="des_Descricao" ColumnName="des_Descricao" />
+                <ScalarProperty Name="des_Id" ColumnName="des_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_empresa">
+            <EntityTypeMapping TypeName="sql10195674Model.tb_empresa">
+              <MappingFragment StoreEntitySet="tb_empresa">
+                <ScalarProperty Name="emp_SenhaEmail" ColumnName="emp_SenhaEmail" />
+                <ScalarProperty Name="emp_TestePagSeguro" ColumnName="emp_TestePagSeguro" />
+                <ScalarProperty Name="emp_TokenPagSeguro" ColumnName="emp_TokenPagSeguro" />
+                <ScalarProperty Name="emp_LoginPagSeguro" ColumnName="emp_LoginPagSeguro" />
+                <ScalarProperty Name="emp_Email" ColumnName="emp_Email" />
+                <ScalarProperty Name="emp_LocalVersao" ColumnName="emp_LocalVersao" />
+                <ScalarProperty Name="emp_VersaoSistema" ColumnName="emp_VersaoSistema" />
+                <ScalarProperty Name="emp_RazaoSocial" ColumnName="emp_RazaoSocial" />
+                <ScalarProperty Name="emp_CEP" ColumnName="emp_CEP" />
+                <ScalarProperty Name="emp_Complemento" ColumnName="emp_Complemento" />
+                <ScalarProperty Name="emp_Estado" ColumnName="emp_Estado" />
+                <ScalarProperty Name="emp_Cidade" ColumnName="emp_Cidade" />
+                <ScalarProperty Name="emp_Bairro" ColumnName="emp_Bairro" />
+                <ScalarProperty Name="emp_Numero" ColumnName="emp_Numero" />
+                <ScalarProperty Name="emp_Logradouro" ColumnName="emp_Logradouro" />
+                <ScalarProperty Name="emp_Telefone" ColumnName="emp_Telefone" />
+                <ScalarProperty Name="emp_CNPJ" ColumnName="emp_CNPJ" />
+                <ScalarProperty Name="emp_Nome" ColumnName="emp_Nome" />
+                <ScalarProperty Name="emp_Id" ColumnName="emp_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_fases">
+            <EntityTypeMapping TypeName="sql10195674Model.tb_fases">
+              <MappingFragment StoreEntitySet="tb_fases">
+                <ScalarProperty Name="fas_Ativo" ColumnName="fas_Ativo" />
+                <ScalarProperty Name="fas_Dias" ColumnName="fas_Dias" />
+                <ScalarProperty Name="fas_Descricao" ColumnName="fas_Descricao" />
+                <ScalarProperty Name="fas_Id" ColumnName="fas_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_fasesProjeto">
+            <EntityTypeMapping TypeName="sql10195674Model.tb_fasesProjeto">
+              <MappingFragment StoreEntitySet="tb_fasesProjeto">
+                <ScalarProperty Name="fap_Finalizada" ColumnName="fap_Finalizada" />
+                <ScalarProperty Name="fap_DataReal" ColumnName="fap_DataReal" />
+                <ScalarProperty Name="fap_DataPrevista" ColumnName="fap_DataPrevista" />
+                <ScalarProperty Name="fap_PrjId" ColumnName="fap_PrjId" />
+                <ScalarProperty Name="fap_FasId" ColumnName="fap_FasId" />
+                <ScalarProperty Name="fap_Id" ColumnName="fap_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_fluxoCaixa">
+            <EntityTypeMapping TypeName="sql10195674Model.tb_fluxoCaixa">
+              <MappingFragment StoreEntitySet="tb_fluxoCaixa">
+                <ScalarProperty Name="flc_URLPagamento" ColumnName="flc_URLPagamento" />
+                <ScalarProperty Name="flc_PagamentoConfirmado" ColumnName="flc_PagamentoConfirmado" />
+                <ScalarProperty Name="flc_PagSeguro" ColumnName="flc_PagSeguro" />
+                <ScalarProperty Name="flc_GrfId" ColumnName="flc_GrfId" />
+                <ScalarProperty Name="flc_DataCaixa" ColumnName="flc_DataCaixa" />
+                <ScalarProperty Name="flc_Valor" ColumnName="flc_Valor" />
+                <ScalarProperty Name="flc_Descricao" ColumnName="flc_Descricao" />
+                <ScalarProperty Name="flc_UsrId" ColumnName="flc_UsrId" />
+                <ScalarProperty Name="flc_Entrada" ColumnName="flc_Entrada" />
+                <ScalarProperty Name="flc_DataCadastro" ColumnName="flc_DataCadastro" />
+                <ScalarProperty Name="flc_Id" ColumnName="flc_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_grupoFinanceiro">
+            <EntityTypeMapping TypeName="sql10195674Model.tb_grupoFinanceiro">
+              <MappingFragment StoreEntitySet="tb_grupoFinanceiro">
+                <ScalarProperty Name="grf_Data" ColumnName="grf_Data" />
+                <ScalarProperty Name="grf_Ativo" ColumnName="grf_Ativo" />
+                <ScalarProperty Name="grf_Descricao" ColumnName="grf_Descricao" />
+                <ScalarProperty Name="grf_Id" ColumnName="grf_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_ItemPedido">
+            <EntityTypeMapping TypeName="sql10195674Model.tb_ItemPedido">
+              <MappingFragment StoreEntitySet="tb_ItemPedido">
+                <ScalarProperty Name="ipo_PrjId" ColumnName="ipo_PrjId" />
+                <ScalarProperty Name="ipo_Valor" ColumnName="ipo_Valor" />
+                <ScalarProperty Name="ipo_Qtde" ColumnName="ipo_Qtde" />
+                <ScalarProperty Name="ipo_SerId" ColumnName="ipo_SerId" />
+                <ScalarProperty Name="ipo_Id" ColumnName="ipo_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_orcamento">
+            <EntityTypeMapping TypeName="sql10195674Model.tb_orcamento">
+              <MappingFragment StoreEntitySet="tb_orcamento">
+                <ScalarProperty Name="orc_Qtde" ColumnName="orc_Qtde" />
+                <ScalarProperty Name="orc_PrjId" ColumnName="orc_PrjId" />
+                <ScalarProperty Name="orc_SerId" ColumnName="orc_SerId" />
+                <ScalarProperty Name="orc_Id" ColumnName="orc_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_projeto">
+            <EntityTypeMapping TypeName="sql10195674Model.tb_projeto">
+              <MappingFragment StoreEntitySet="tb_projeto">
+                <ScalarProperty Name="prj_Arredondamento" ColumnName="prj_Arredondamento" />
+                <ScalarProperty Name="prj_PerGanho" ColumnName="prj_PerGanho" />
+                <ScalarProperty Name="prj_Obs" ColumnName="prj_Obs" />
+                <ScalarProperty Name="prj_UsrId" ColumnName="prj_UsrId" />
+                <ScalarProperty Name="prj_DataFimReal" ColumnName="prj_DataFimReal" />
+                <ScalarProperty Name="prj_DataFimPrevista" ColumnName="prj_DataFimPrevista" />
+                <ScalarProperty Name="prj_DataInicio" ColumnName="prj_DataInicio" />
+                <ScalarProperty Name="prj_CliId" ColumnName="prj_CliId" />
+                <ScalarProperty Name="prj_Id" ColumnName="prj_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_projetoFluxoCaixa">
+            <EntityTypeMapping TypeName="sql10195674Model.tb_projetoFluxoCaixa">
+              <MappingFragment StoreEntitySet="tb_projetoFluxoCaixa">
+                <ScalarProperty Name="pfc_Despesa" ColumnName="pfc_Despesa" />
+                <ScalarProperty Name="pfc_FlcId" ColumnName="pfc_FlcId" />
+                <ScalarProperty Name="pfc_PrjId" ColumnName="pfc_PrjId" />
+                <ScalarProperty Name="pfc_Id" ColumnName="pfc_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_servicos">
+            <EntityTypeMapping TypeName="sql10195674Model.tb_servicos">
+              <MappingFragment StoreEntitySet="tb_servicos">
+                <ScalarProperty Name="ser_UniId" ColumnName="ser_UniId" />
+                <ScalarProperty Name="ser_Data" ColumnName="ser_Data" />
+                <ScalarProperty Name="ser_Ativo" ColumnName="ser_Ativo" />
+                <ScalarProperty Name="ser_Valor" ColumnName="ser_Valor" />
+                <ScalarProperty Name="ser_Descricao" ColumnName="ser_Descricao" />
+                <ScalarProperty Name="ser_Id" ColumnName="ser_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_telas">
+            <EntityTypeMapping TypeName="sql10195674Model.tb_telas">
+              <MappingFragment StoreEntitySet="tb_telas">
+                <ScalarProperty Name="tel_Icone" ColumnName="tel_Icone" />
+                <ScalarProperty Name="tel_frmPrincipal" ColumnName="tel_frmPrincipal" />
+                <ScalarProperty Name="tel_Nome" ColumnName="tel_Nome" />
+                <ScalarProperty Name="tel_Id" ColumnName="tel_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_unidade">
+            <EntityTypeMapping TypeName="sql10195674Model.tb_unidade">
+              <MappingFragment StoreEntitySet="tb_unidade">
+                <ScalarProperty Name="uni_Descricao" ColumnName="uni_Descricao" />
+                <ScalarProperty Name="uni_Id" ColumnName="uni_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_usuario">
+            <EntityTypeMapping TypeName="sql10195674Model.tb_usuario">
+              <MappingFragment StoreEntitySet="tb_usuario">
+                <ScalarProperty Name="usr_Data" ColumnName="usr_Data" />
+                <ScalarProperty Name="usr_Ativo" ColumnName="usr_Ativo" />
+                <ScalarProperty Name="usr_Nome" ColumnName="usr_Nome" />
+                <ScalarProperty Name="usr_Senha" ColumnName="usr_Senha" />
+                <ScalarProperty Name="usr_Email" ColumnName="usr_Email" />
+                <ScalarProperty Name="usr_Id" ColumnName="usr_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_mensagens">
+            <EntityTypeMapping TypeName="sql10195674Model.tb_mensagens">
+              <MappingFragment StoreEntitySet="tb_mensagens">
+                <ScalarProperty Name="msg_UsrIdEnvio" ColumnName="msg_UsrIdEnvio" />
+                <ScalarProperty Name="msg_UsrId" ColumnName="msg_UsrId" />
+                <ScalarProperty Name="msg_Lida" ColumnName="msg_Lida" />
+                <ScalarProperty Name="msg_DataHora" ColumnName="msg_DataHora" />
+                <ScalarProperty Name="msg_Texto" ColumnName="msg_Texto" />
+                <ScalarProperty Name="msg_Id" ColumnName="msg_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
